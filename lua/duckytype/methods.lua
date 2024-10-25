@@ -203,6 +203,9 @@ Methods.Start = function(key_override)
 	local _ = Methods.Expect(key, constants)
 
 	buffer = vim.api.nvim_create_buf(false, true)
+	vim.api.nvim_buf_set_name(buffer, "duckytype")
+	vim.api.nvim_buf_set_option(buffer, "filetype", "duckytype")
+
 	if settings.centered then
 		local c = (vim.api.nvim_get_option("columns") - settings.window_config.width) / 2
 		local r = (vim.api.nvim_get_option("lines") - settings.window_config.height) / 2
